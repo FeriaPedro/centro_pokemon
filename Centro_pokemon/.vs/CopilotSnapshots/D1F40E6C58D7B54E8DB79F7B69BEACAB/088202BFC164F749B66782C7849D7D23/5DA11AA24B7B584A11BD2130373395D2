@@ -49,13 +49,10 @@ namespace Centro_pokemon
                         CadastroPokebola();
                         break;
                     case 3:
-                        CadastroTreinadores();
                         break;
                     case 4:
-                        CadastroCidades();
                         break;
                     case 5:
-                        CadastroGinasios();
                         break;
                     case 6:
                         break;
@@ -143,7 +140,7 @@ namespace Centro_pokemon
 
         static void CadastroPokebola()
         {
-
+            int opcao = 0;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.BackgroundColor = ConsoleColor.DarkGray;
@@ -159,127 +156,43 @@ namespace Centro_pokemon
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.BackgroundColor = ConsoleColor.White;
-
+        
 
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("\nQual sua Pokebola:");
-            string nomePokebola = Console.ReadLine();
-            Console.WriteLine("\nQual a cor da sua pokebola? ");
-            string corPokebola = Console.ReadLine();
-            Console.WriteLine("\nQual a chance de captura dela? ");
-            string forçaPokebola = Console.ReadLine();
-            Thread.Sleep(1500);
-        }
+            Console.WriteLine("\n1 - Pokebola Padrão");
+            Console.WriteLine("\n2 - Pokebola Great Ball");
+            Console.WriteLine("\n3 - Pokebola Ultra Ball");
+            Console.WriteLine("\n4 - Pokebola Master Ball");
+            Console.WriteLine("\nEscolha uma opção:");
 
-
-
-        static void CadastroTreinadores()
-        {
-            Console.ResetColor();
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine(@"
-████████╗██████╗░███████╗██╗███╗░░██╗░█████╗░██████╗░░█████╗░██████╗░███████╗░██████╗
-╚══██╔══╝██╔══██╗██╔════╝██║████╗░██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝
-░░░██║░░░██████╔╝█████╗░░██║██╔██╗██║███████║██║░░██║██║░░██║██████╔╝█████╗░░╚█████╗░
-░░░██║░░░██╔══██╗██╔══╝░░██║██║╚████║██╔══██║██║░░██║██║░░██║██╔══██╗██╔══╝░░░╚═══██╗
-░░░██║░░░██║░░██║███████╗██║██║░╚███║██║░░██║██████╔╝╚█████╔╝██║░░██║███████╗██████╔╝
-░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚═╝╚═╝░░╚══╝╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚═════╝░");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-
-            Console.WriteLine("Qual o nome do seu treinador: ");
-            string nomeTreinador = Console.ReadLine();
-
-            Console.WriteLine("Quantos pokemons ele tem? ");
-            int qtdpokemon = int.Parse(Console.ReadLine());
-            for (int i = 1; i <= qtdpokemon; i++)
+            if (!int.TryParse(Console.ReadLine(), out opcao))
             {
-                Console.WriteLine($"\n Pokemon {i} do treinador:");
-                string nomePokemon = Console.ReadLine();
+                opcao = 0;
             }
 
-
-
-            Console.WriteLine("Quantas vitórias o treinador  tem na carreira? ");
-            string ww = Console.ReadLine();
-
-
-
-            Console.WriteLine("Qual a região de Origem do treinador  ?");
-            string regiao = Console.ReadLine();
-
-            Console.WriteLine("Qual a idade do treinador? ");
-            string idade = Console.ReadLine();
-
-
-            Thread.Sleep(2500);
-
-
-        }
-
-
-
-
-
-
-
-
-
-        static void CadastroCidades()
-        {
-            Console.Clear();
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine(@"
-░█████╗░██╗██████╗░░█████╗░██████╗░███████╗░██████╗
-██╔══██╗██║██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝
-██║░░╚═╝██║██║░░██║███████║██║░░██║█████╗░░╚█████╗░
-██║░░██╗██║██║░░██║██╔══██║██║░░██║██╔══╝░░░╚═══██╗
-╚█████╔╝██║██████╔╝██║░░██║██████╔╝███████╗██████╔╝
-░╚════╝░╚═╝╚═════╝░╚═╝░░╚═╝╚═════╝░╚══════╝╚═════╝░");
-
-
-
-
-
-            Console.WriteLine("\nQual a cidade que o treinador reside? ");
-            string nomeCidade = Console.ReadLine();
-            Console.WriteLine("\nQual região esta cidade fica: ");
-            string regiao = Console.ReadLine();
-            Thread.Sleep(2500);
-        }
-        static void CadastroGinasios()
-        {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine(@"
-░██████╗░██╗███╗░░██╗░█████╗░░██████╗██╗░█████╗░
-██╔════╝░██║████╗░██║██╔══██╗██╔════╝██║██╔══██╗
-██║░░██╗░██║██╔██╗██║███████║╚█████╗░██║██║░░██║
-██║░░╚██╗██║██║╚████║██╔══██║░╚═══██╗██║██║░░██║
-╚██████╔╝██║██║░╚███║██║░░██║██████╔╝██║╚█████╔╝
-░╚═════╝░╚═╝╚═╝░░╚══╝╚═╝░░╚═╝╚═════╝░╚═╝░╚════╝░");
+            switch (opcao)
+            {
+                case 1:
+                    Console.WriteLine("\n Pokebola Padrão");
+                    break;
+                case 2:
+                    Console.WriteLine("\n Pokebola Great Ball");
+                    break;
+                case 3:
+                    Console.WriteLine("\n Pokebola Ultra Ball");
+                    break;
+                case 4:
+                    Console.WriteLine("\n Pokebola Master Ball");
+                    break;
+                default:
+                    Console.WriteLine("\n Opção inválida, tente novamente");
+                    Thread.Sleep(1300);
+                    break;
+            }
 
             Console.ResetColor();
-
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("\nQual o Nome do Ginasio: ");
-            string namegin = Console.ReadLine();
-
-
-            Console.WriteLine("\nQual o nome do lider do Ginásio?");
-            string nameLider = Console.ReadLine();
-            Thread.Sleep(3500);
-
         }
 
     }
 }
-
-
-
-
-      
-
