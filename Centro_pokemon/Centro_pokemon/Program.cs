@@ -37,7 +37,7 @@ namespace Centro_pokemon
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("\n Digite a opção escolhida");
                 Console.ResetColor();
-                opcao = int.Parse(Console.ReadLine());
+                opcao = int.Parse(Console.ReadLine());  
 
 
                 switch (opcao)
